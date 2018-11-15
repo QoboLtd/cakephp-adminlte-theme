@@ -1,17 +1,18 @@
+<?php use Cake\Core\Configure; ?>
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title><?php echo isset($theme['title']) ? $theme['title'] : 'AdminLTE 2 | Log in'; ?></title>
+  <title><?php echo Configure::read('Theme.title'); ?></title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.5 -->
-  <?php echo $this->Html->css('AdminLTE./bootstrap/css/bootstrap'); ?>
+  <?php echo $this->Html->css('AdminLTE./bootstrap/css/bootstrap.min'); ?>
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
   <!-- Ionicons -->
-  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
   <!-- Theme style -->
   <?php echo $this->Html->css('AdminLTE.AdminLTE.min'); ?>
   <!-- iCheck -->
@@ -27,7 +28,7 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a href="<?php echo $this->Url->build(array('controller' => 'pages', 'action' => 'display', 'home')); ?>"><?php echo $theme['logo']['large'] ?></a>
+    <a href="<?php echo $this->Url->build(array('controller' => 'pages', 'action' => 'display', 'home')); ?>"><?php echo Configure::read('Theme.logo.large'); ?></a>
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">
@@ -38,7 +39,7 @@
 <?php echo $this->fetch('content'); ?>
 
     <?php
-    if (isset($theme['login']['show_social']) && $theme['login']['show_social']) {
+    if (Configure::read('Theme.login.show_social')) {
         ?>
         <div class="social-auth-links text-center">
           <p>- <?php echo __('OR') ?> -</p>
@@ -50,12 +51,12 @@
     ?>
 
     <?php
-    if (isset($theme['login']['show_remember']) && $theme['login']['show_remember']) {
+    if (Configure::read('Theme.login.show_remember')) {
         ?>
         <a href="#"><?php echo __('I forgot my password') ?></a><br>
         <?php
     }
-    if (isset($theme['login']['show_register']) && $theme['login']['show_register']) {
+    if (Configure::read('Theme.login.show_register')) {
         ?>
         <a href="#" class="text-center"><?php echo __('Register a new membership') ?></a>
         <?php
@@ -67,12 +68,12 @@
 </div>
 <!-- /.login-box -->
 
-<!-- jQuery 2.1.4 -->
-<?php echo $this->Html->script('/plugins/jQuery/jQuery-2.1.4.min'); ?>
-<!-- Bootstrap 3.3.5 -->
-<?php echo $this->Html->script('/bootstrap/js/bootstrap'); ?>
+<!-- jQuery 2.2.3 -->
+<?php echo $this->Html->script('AdminLTE./plugins/jQuery/jquery-2.2.3.min'); ?>
+<!-- Bootstrap 3.3.6 -->
+<?php echo $this->Html->script('AdminLTE./bootstrap/js/bootstrap.min'); ?>
 <!-- iCheck -->
-<?php echo $this->Html->script('/plugins/iCheck/icheck.min'); ?>
+<?php echo $this->Html->script('AdminLTE./plugins/iCheck/icheck.min'); ?>
 <script>
   $(function () {
     $('input').iCheck({

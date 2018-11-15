@@ -1,5 +1,7 @@
 <?php
-$file = $theme['folder'] . DS . 'src' . DS . 'Template' . DS . 'Element' . DS . 'aside-main-sidebar.ctp';
+use Cake\Core\Configure;
+
+$file = Configure::read('Theme.folder') . DS . 'src' . DS . 'Template' . DS . 'Element' . DS . 'aside-main-sidebar.ctp';
 
 if (file_exists($file)) {
     ob_start();

@@ -1,3 +1,4 @@
+<?php use Cake\Core\Configure; ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,16 +8,16 @@
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.5 -->
-  <?php echo $this->Html->css('AdminLTE./bootstrap/css/bootstrap'); ?>
+  <?php echo $this->Html->css('AdminLTE./bootstrap/css/bootstrap.min'); ?>
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
   <!-- Ionicons -->
-  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
   <!-- Theme style -->
   <?php echo $this->Html->css('AdminLTE.AdminLTE.min'); ?>
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
-  <?php echo $this->Html->css('AdminLTE.skins/skin-blue'); ?>
+    <?php echo $this->Html->css('AdminLTE.skins/skin-'. Configure::read('Theme.skin') .'.min'); ?>
 
   <?php echo $this->fetch('css'); ?>
 
@@ -28,7 +29,7 @@
   <![endif]-->
 </head>
 <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
-<body class="hold-transition skin-blue layout-top-nav">
+<body class="hold-transition skin-<?php echo Configure::read('Theme.skin'); ?> layout-top-nav">
 <div class="wrapper">
 
   <header class="main-header">
@@ -230,19 +231,19 @@
 </div>
 <!-- ./wrapper -->
 
-<!-- jQuery 2.1.4 -->
-<?php echo $this->Html->script('AdminLTE./plugins/jQuery/jQuery-2.1.4.min'); ?>
+<!-- jQuery 2.2.2-->
+<?php echo $this->Html->script('AdminLTE./plugins/jQuery/jquery-2.2.3.min'); ?>
 <!-- Bootstrap 3.3.5 -->
-<?php echo $this->Html->script('AdminLTE./bootstrap/js/bootstrap'); ?>
+<?php echo $this->Html->script('AdminLTE./bootstrap/js/bootstrap.min'); ?>
 <!-- SlimScroll -->
 <?php echo $this->Html->script('AdminLTE./plugins/slimScroll/jquery.slimscroll.min'); ?>
 <!-- FastClick -->
 <?php echo $this->Html->script('AdminLTE./plugins/fastclick/fastclick'); ?>
 <!-- AdminLTE App -->
-<?php echo $this->Html->script('AdminLTE.AdminLTE.min'); ?>
+<?php echo $this->Html->script('AdminLTE./js/app.min'); ?>
 <!-- AdminLTE for demo purposes -->
 <?php echo $this->fetch('script'); ?>
-<?php echo $this->fetch('scriptBotton'); ?>
+<?php echo $this->fetch('scriptBottom'); ?>
 
 
 </body>

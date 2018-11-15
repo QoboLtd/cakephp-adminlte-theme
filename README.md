@@ -1,4 +1,3 @@
-[![Stories in Ready](https://badge.waffle.io/maiconpinto/cakephp-adminlte-theme.png?label=ready&title=Ready)](https://waffle.io/maiconpinto/cakephp-adminlte-theme)
 # CakePHP AdminLTE Theme
 
 ## Installation
@@ -15,6 +14,7 @@ composer require maiconpinto/cakephp-adminlte-theme
 // config/bootstrap.php
 
 Plugin::load('AdminLTE', ['bootstrap' => true, 'routes' => true]);
+
 ```
 
 ### Enable theme
@@ -24,6 +24,9 @@ Plugin::load('AdminLTE', ['bootstrap' => true, 'routes' => true]);
 
 public function beforeRender(Event $event)
 {
+    $this->viewBuilder()->setTheme('AdminLTE');
+
+    // For CakePHP before 3.5
     $this->viewBuilder()->theme('AdminLTE');
 }
 ```
@@ -42,17 +45,6 @@ public function initialize()
 ### Configure
 
 ```php
-// src/Controller/AppController.php
-use Cake\Core\Configure;
-
-public function beforeRender(Event $event)
-{
-    // ...
-    $this->set('theme', Configure::read('Theme'));
-}
-```
-
-```php
 // To customize configuration paste it at end of file config/bootstrap.php
 
 Configure::write('Theme', [
@@ -65,23 +57,15 @@ Configure::write('Theme', [
         'show_remember' => true,
         'show_register' => true,
         'show_social' => true
-    ]
+    ],
+    'folder' => ROOT,
+    'skin' => 'blue' // default is 'blue'
 ]);
 ```
 
 ### Customize Layout
 
-Replace the files according to the image.
-
-![Dashboard](docs/dashboard.png)
-
-1. `src/Template/Element/nav-top.ctp`
-2. `src/Template/Element/aside-main-sidebar.ctp`
-3. `src/Template/Element/aside/user-panel.ctp`
-4. `src/Template/Element/aside/form.ctp`
-5. `src/Template/Element/aside/sidebar-menu.ctp`
-6. `src/Template/Element/aside-control-sidebar.ctp`
-7. `src/Template/Element/footer.ctp`
+If you want to [Customize Layout](https://github.com/maiconpinto/cakephp-adminlte-theme/wiki/Customize-Layout)
 
 ### Page debug
 
