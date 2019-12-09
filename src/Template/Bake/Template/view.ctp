@@ -40,11 +40,11 @@ $pk = "\$$singularVar->{$primaryKey[0]}";
 %>
 <section class="content-header">
   <h1>
-    <?php echo __('<%= $singularHumanName %>'); ?>
+    <?php echo __d('Qobo/Adminlte', '<%= $singularHumanName %>'); ?>
   </h1>
   <ol class="breadcrumb">
     <li>
-    <?= $this->Html->link('<i class="fa fa-dashboard"></i> ' . __('Back'), ['action' => 'index'], ['escape' => false])?>
+    <?= $this->Html->link('<i class="fa fa-dashboard"></i> ' . __d('Qobo/Adminlte', 'Back'), ['action' => 'index'], ['escape' => false])?>
     </li>
   </ol>
 </section>
@@ -56,7 +56,7 @@ $pk = "\$$singularVar->{$primaryKey[0]}";
         <div class="box box-solid">
             <div class="box-header with-border">
                 <i class="fa fa-info"></i>
-                <h3 class="box-title"><?php echo __('Information'); ?></h3>
+                <h3 class="box-title"><?php echo __d('Qobo/Adminlte', 'Information'); ?></h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
@@ -66,13 +66,13 @@ $pk = "\$$singularVar->{$primaryKey[0]}";
                             <% if (isset($associationFields[$field])) :
                                 $details = $associationFields[$field];
                                 %>
-                                <dt><?= __('<%= Inflector::humanize($details['property']) %>') ?></dt>
+                                <dt><?= __d('Qobo/Adminlte', '<%= Inflector::humanize($details['property']) %>') ?></dt>
                                 <dd>
                                     <?= $<%= $singularVar %>->has('<%= $details['property'] %>') ? $<%= $singularVar %>-><%= $details['property'] %>-><%= $details['displayField'] %> : '' ?>
                                 </dd>
                             <% else :
                                     if ($field != 'password') :%>
-                                        <dt><?= __('<%= Inflector::humanize($field) %>') ?></dt>
+                                        <dt><?= __d('Qobo/Adminlte', '<%= Inflector::humanize($field) %>') ?></dt>
                                         <dd>
                                             <?= h($<%= $singularVar %>-><%= $field %>) ?>
                                         </dd>
@@ -83,7 +83,7 @@ $pk = "\$$singularVar->{$primaryKey[0]}";
                         
                     <% if ($associations['HasOne']) : %>
                         <% foreach ($associations['HasOne'] as $alias => $details) : %>
-                            <dt><?= __('<%= Inflector::humanize(Inflector::singularize(Inflector::underscore($alias))) %>') ?></dt>
+                            <dt><?= __d('Qobo/Adminlte', '<%= Inflector::humanize(Inflector::singularize(Inflector::underscore($alias))) %>') ?></dt>
                             <dd>
                                 <?= $<%= $singularVar %>->has('<%= $details['property'] %>') ? $this->Html->link($<%= $singularVar %>-><%= $details['property'] %>-><%= $details['displayField'] %>, ['controller' => '<%= $details['controller'] %>', 'action' => 'view', $<%= $singularVar %>-><%= $details['property'] %>-><%= $details['primaryKey'][0] %>]) : '' ?>
                             </dd>
@@ -93,7 +93,7 @@ $pk = "\$$singularVar->{$primaryKey[0]}";
                     <% if ($groupedFields['number']) : %>
                         <% foreach ($groupedFields['number'] as $field) : %>
                             <% if ($field != $primaryKey[0]) :%>
-                                <dt><?= __('<%= Inflector::humanize($field) %>') ?></dt>
+                                <dt><?= __d('Qobo/Adminlte', '<%= Inflector::humanize($field) %>') ?></dt>
                                 <dd>
                                     <?= $this->Number->format($<%= $singularVar %>-><%= $field %>) ?>
                                 </dd>
@@ -104,7 +104,7 @@ $pk = "\$$singularVar->{$primaryKey[0]}";
                     <% if ($groupedFields['date']) : %>
                         <% foreach ($groupedFields['date'] as $field) : %>
                             <% if (!in_array($field, ['created', 'modified', 'updated'])) : %>
-                                <dt><%= "<%= __('" . Inflector::humanize($field) . "') %>" %></dt>
+                                <dt><%= "<%= __d('Qobo/Adminlte', '" . Inflector::humanize($field) . "') %>" %></dt>
                                 <dd>
                                     <?= h($<%= $singularVar %>-><%= $field %>) ?>
                                 </dd>
@@ -114,16 +114,16 @@ $pk = "\$$singularVar->{$primaryKey[0]}";
                         
                     <% if ($groupedFields['boolean']) : %>
                         <% foreach ($groupedFields['boolean'] as $field) : %>
-                            <dt><?= __('<%= Inflector::humanize($field) %>') ?></dt>
+                            <dt><?= __d('Qobo/Adminlte', '<%= Inflector::humanize($field) %>') ?></dt>
                             <dd>
-                            <?= $<%= $singularVar %>-><%= $field %> ? __('Yes') : __('No'); ?>
+                            <?= $<%= $singularVar %>-><%= $field %> ? __d('Qobo/Adminlte', 'Yes') : __d('Qobo/Adminlte', 'No'); ?>
                             </dd>
                         <% endforeach; %>
                     <% endif; %>
                         
                     <% if ($groupedFields['text']) : %>
                         <% foreach ($groupedFields['text'] as $field) : %>
-                            <dt><?= __('<%= Inflector::humanize($field) %>') ?></dt>
+                            <dt><?= __d('Qobo/Adminlte', '<%= Inflector::humanize($field) %>') ?></dt>
                             <dd>
                             <?= $this->Text->autoParagraph(h($<%= $singularVar %>-><%= $field %>)); ?>
                             </dd>
@@ -150,7 +150,7 @@ foreach ($relations as $alias => $details):
             <div class="box">
                 <div class="box-header">
                     <i class="fa fa-share-alt"></i>
-                    <h3 class="box-title"><?= __('Related {0}', ['<%= $otherPluralHumanName %>']) ?></h3>
+                    <h3 class="box-title"><?= __d('Qobo/Adminlte', 'Related {0}', ['<%= $otherPluralHumanName %>']) ?></h3>
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body table-responsive no-padding">
@@ -170,7 +170,7 @@ foreach ($relations as $alias => $details):
                                 <% endforeach; %>
                                     
                                 <th>
-                                    <?php echo __('Actions'); ?>
+                                    <?php echo __d('Qobo/Adminlte', 'Actions'); ?>
                                 </th>
                             </tr>
 
@@ -186,9 +186,9 @@ foreach ($relations as $alias => $details):
 
                                     <% $otherPk = "\${$otherSingularVar}->{$details['primaryKey'][0]}"; %>
                                     <td class="actions">
-                                    <?= $this->Html->link(__('View'), ['controller' => '<%= $details['controller'] %>', 'action' => 'view', <%= $otherPk %>], ['class'=>'btn btn-info btn-xs']) %>
-                                    <?= $this->Html->link(__('Edit'), ['controller' => '<%= $details['controller'] %>', 'action' => 'edit', <%= $otherPk %>], ['class'=>'btn btn-warning btn-xs']) %>
-                                    <?= $this->Form->postLink(__('Delete'), ['controller' => '<%= $details['controller'] %>', 'action' => 'delete', <%= $otherPk %>], ['confirm' => __('Are you sure you want to delete # {0}?', <%= $otherPk %>), 'class'=>'btn btn-danger btn-xs']) %>    
+                                    <?= $this->Html->link(__d('Qobo/Adminlte', 'View'), ['controller' => '<%= $details['controller'] %>', 'action' => 'view', <%= $otherPk %>], ['class'=>'btn btn-info btn-xs']) %>
+                                    <?= $this->Html->link(__d('Qobo/Adminlte', 'Edit'), ['controller' => '<%= $details['controller'] %>', 'action' => 'edit', <%= $otherPk %>], ['class'=>'btn btn-warning btn-xs']) %>
+                                    <?= $this->Form->postLink(__d('Qobo/Adminlte', 'Delete'), ['controller' => '<%= $details['controller'] %>', 'action' => 'delete', <%= $otherPk %>], ['confirm' => __d('Qobo/Adminlte', 'Are you sure you want to delete # {0}?', <%= $otherPk %>), 'class'=>'btn btn-danger btn-xs']) %>    
                                     </td>
                                 </tr>
                             <?php endforeach; ?>

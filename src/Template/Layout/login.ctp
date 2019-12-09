@@ -32,7 +32,7 @@
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">
-    <p class="login-box-msg"><?php echo __('Sign in to start your session') ?></p>
+    <p class="login-box-msg"><?php echo __d('Qobo/Adminlte', 'Sign in to start your session') ?></p>
     <p> <?php echo $this->Flash->render(); ?> </p>
     <p> <?php echo $this->Flash->render('auth'); ?> </p>
 
@@ -42,9 +42,9 @@
     if (Configure::read('Theme.login.show_social')) {
         ?>
         <div class="social-auth-links text-center">
-          <p>- <?php echo __('OR') ?> -</p>
-          <a href="#" class="btn btn-block btn-social btn-facebook btn-flat"><i class="fa fa-facebook"></i> <?php echo __('Sign in using Facebook') ?></a>
-          <a href="#" class="btn btn-block btn-social btn-google btn-flat"><i class="fa fa-google-plus"></i> <?php echo __('Sign in using Google+') ?></a>
+          <p>- <?php echo __d('Qobo/Adminlte', 'OR') ?> -</p>
+          <a href="#" class="btn btn-block btn-social btn-facebook btn-flat"><i class="fa fa-facebook"></i> <?php echo __d('Qobo/Adminlte', 'Sign in using Facebook') ?></a>
+          <a href="#" class="btn btn-block btn-social btn-google btn-flat"><i class="fa fa-google-plus"></i> <?php echo __d('Qobo/Adminlte', 'Sign in using Google+') ?></a>
         </div>
         <?php
     }
@@ -53,12 +53,12 @@
     <?php
     if (Configure::read('Theme.login.show_remember')) {
         ?>
-        <a href="#"><?php echo __('I forgot my password') ?></a><br>
+        <a href="#"><?php echo __d('Qobo/Adminlte', 'I forgot my password') ?></a><br>
         <?php
     }
     if (Configure::read('Theme.login.show_register')) {
         ?>
-        <a href="#" class="text-center"><?php echo __('Register a new membership') ?></a>
+        <a href="#" class="text-center"><?php echo __d('Qobo/Adminlte', 'Register a new membership') ?></a>
         <?php
     }
     ?>

@@ -33,10 +33,10 @@ $compact = ["'" . $singularName . "'"];
         if ($this->request->is(['patch', 'post', 'put'])) {
             $<%= $singularName %> = $this-><%= $currentModelName %>->patchEntity($<%= $singularName %>, $this->request->data);
             if ($this-><%= $currentModelName; %>->save($<%= $singularName %>)) {
-                $this->Flash->success(__('The {0} has been saved.', '<%= $singularHumanName %>'));
+                $this->Flash->success(__d('Qobo/Adminlte', 'The {0} has been saved.', '<%= $singularHumanName %>'));
                 return $this->redirect(['action' => 'index']);
             } else {
-                $this->Flash->error(__('The {0} could not be saved. Please, try again.', '<%= $singularHumanName %>'));
+                $this->Flash->error(__d('Qobo/Adminlte', 'The {0} could not be saved. Please, try again.', '<%= $singularHumanName %>'));
             }
         }
 <%

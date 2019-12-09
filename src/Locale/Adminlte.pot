@@ -1,0 +1,103 @@
+# LANGUAGE translation of CakePHP Application
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2019-12-09 14:47+0000\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+msgid "<%= Inflector::humanize($action) %>"
+msgstr ""
+
+msgid "Back"
+msgstr ""
+
+msgid "Form"
+msgstr ""
+
+msgid "Save"
+msgstr ""
+
+msgid "New"
+msgstr ""
+
+msgid "List of"
+msgstr ""
+
+msgid "Fill in to start search"
+msgstr ""
+
+msgid "Filter"
+msgstr ""
+
+msgid "Actions"
+msgstr ""
+
+msgid "View"
+msgstr ""
+
+msgid "Edit"
+msgstr ""
+
+msgid "Delete"
+msgstr ""
+
+msgid "Confirm to delete this entry?"
+msgstr ""
+
+msgid "<%= $singularHumanName %>"
+msgstr ""
+
+msgid "Information"
+msgstr ""
+
+msgid "<%= Inflector::humanize($details["
+msgstr ""
+
+msgid "<%= Inflector::humanize($field) %>"
+msgstr ""
+
+msgid "<%= Inflector::humanize(Inflector::singularize(Inflector::underscore($alias))) %>"
+msgstr ""
+
+msgid "Yes"
+msgstr ""
+
+msgid "No"
+msgstr ""
+
+msgid "Related {0}"
+msgstr ""
+
+msgid "Are you sure you want to delete # {0}?"
+msgstr ""
+
+msgid "Alert"
+msgstr ""
+
+msgid "Sign in to start your session"
+msgstr ""
+
+msgid "OR"
+msgstr ""
+
+msgid "Sign in using Facebook"
+msgstr ""
+
+msgid "Sign in using Google+"
+msgstr ""
+
+msgid "I forgot my password"
+msgstr ""
+
+msgid "Register a new membership"
+msgstr ""
+

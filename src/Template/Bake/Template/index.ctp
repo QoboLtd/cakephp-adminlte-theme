@@ -11,7 +11,7 @@ $fields = collection($fields)
 <section class="content-header">
   <h1>
     <%= $pluralHumanName %>
-    <div class="pull-right"><?= $this->Html->link(__('New'), ['action' => 'add'], ['class'=>'btn btn-success btn-xs']) ?></div>
+    <div class="pull-right"><?= $this->Html->link(__d('Qobo/Adminlte', 'New'), ['action' => 'add'], ['class'=>'btn btn-success btn-xs']) ?></div>
   </h1>
 </section>
 
@@ -21,13 +21,13 @@ $fields = collection($fields)
     <div class="col-xs-12">
       <div class="box">
         <div class="box-header">
-          <h3 class="box-title"><?= __('List of') ?> <%= $pluralHumanName %></h3>
+          <h3 class="box-title"><?= __d('Qobo/Adminlte', 'List of') ?> <%= $pluralHumanName %></h3>
           <div class="box-tools">
             <form action="<?php echo $this->Url->build(); ?>" method="POST">
               <div class="input-group input-group-sm"  style="width: 180px;">
-                <input type="text" name="search" class="form-control" placeholder="<?= __('Fill in to start search') ?>">
+                <input type="text" name="search" class="form-control" placeholder="<?= __d('Qobo/Adminlte', 'Fill in to start search') ?>">
                 <span class="input-group-btn">
-                <button class="btn btn-info btn-flat" type="submit"><?= __('Filter') ?></button>
+                <button class="btn btn-info btn-flat" type="submit"><?= __d('Qobo/Adminlte', 'Filter') ?></button>
                 </span>
               </div>
             </form>
@@ -43,7 +43,7 @@ if (!in_array($field, ['created', 'modified', 'updated'])) :%>
                 <th><?= $this->Paginator->sort('<%= $field %>') ?></th>
 <%  endif; %>
 <%  endforeach; %>
-                <th><?= __('Actions') ?></th>
+                <th><?= __d('Qobo/Adminlte', 'Actions') ?></th>
               </tr>
             </thead>
             <tbody>
@@ -80,9 +80,9 @@ if (!in_array($field, ['created', 'modified', 'updated'])) :%>
   $pk = '$' . $singularVar . '->' . $primaryKey[0];
 %>
                 <td class="actions" style="white-space:nowrap">
-                  <?= $this->Html->link(__('View'), ['action' => 'view', <%= $pk %>], ['class'=>'btn btn-info btn-xs']) ?>
-                  <?= $this->Html->link(__('Edit'), ['action' => 'edit', <%= $pk %>], ['class'=>'btn btn-warning btn-xs']) ?>
-                  <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', <%= $pk %>], ['confirm' => __('Confirm to delete this entry?'), 'class'=>'btn btn-danger btn-xs']) ?>
+                  <?= $this->Html->link(__d('Qobo/Adminlte', 'View'), ['action' => 'view', <%= $pk %>], ['class'=>'btn btn-info btn-xs']) ?>
+                  <?= $this->Html->link(__d('Qobo/Adminlte', 'Edit'), ['action' => 'edit', <%= $pk %>], ['class'=>'btn btn-warning btn-xs']) ?>
+                  <?= $this->Form->postLink(__d('Qobo/Adminlte', 'Delete'), ['action' => 'delete', <%= $pk %>], ['confirm' => __d('Qobo/Adminlte', 'Confirm to delete this entry?'), 'class'=>'btn btn-danger btn-xs']) ?>
                 </td>
               </tr>
             <?php endforeach; ?>
